@@ -45,3 +45,40 @@ describe("ENCRYPT METHOD", () => {
       );
    });
 });
+
+describe("DECRYPT METHOD", () => {
+   test("It can decrypt a simple string", () => {
+      expect(vigenereCipher.decrypt("vrpzb", "one")).toBe("hello");
+   });
+
+   test("#1 Key argument case does not matter", () => {
+      expect(vigenereCipher.decrypt("vrpzb", "One")).toBe("hello");
+   });
+
+   test("#2 Key argument case does not matter", () => {
+      expect(vigenereCipher.decrypt("vrpzb", "oNe")).toBe("hello");
+   });
+
+   test("#3 Key argument case does not matter", () => {
+      expect(vigenereCipher.decrypt("vrpzb", "onE")).toBe("hello");
+   });
+
+   test("Capital letters are preversed", () => {
+      expect(vigenereCipher.decrypt("VRPZ B!", "one")).toBe("HELL O!");
+   });
+
+   test("It can decrypt a long string", () => {
+      expect(
+         vigenereCipher.decrypt(
+            "Lws damdy cjdka lsy xveeg bbis hiw aome hpu",
+            "spongebob"
+         )
+      ).toBe("The quick brown fox jumps over the lazy dog");
+   });
+
+   test("Non-letter characters are ignore", () => {
+      expect(
+         vigenereCipher.decrypt(".;#&% Rijvs,... Astfov! &%#;.", "key")
+      ).toBe(".;#&% Hello,... Cipher! &%#;.");
+   });
+});

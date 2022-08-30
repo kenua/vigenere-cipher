@@ -48,8 +48,47 @@ const vigenereCipher = (function () {
       return result;
    };
 
+   const decrypt = function (encryptedMessage, key) {
+      let result = "";
+      let rowIndex = 0;
+      let colIndex = 0;
+
+      key = key.toLowerCase();
+
+      for (; colIndex < encryptedMessage.length; colIndex++) {
+         let rowObj = _vigenereTable[key[rowIndex]];
+
+         for (let prop in rowObj) {
+            // if the current character of encryptedMessage is not a letter,
+            // add it to result add jump to next iteration.
+            if (encryptedMessage[colIndex].toLowerCase().match(/[\d\W_]/i)) {
+               result = result + encryptedMessage[colIndex];
+               break;
+            }
+
+            if (rowObj[prop] === encryptedMessage[colIndex].toLowerCase()) {
+               let letter = prop;
+
+               if (
+                  encryptedMessage[colIndex].codePointAt() >= 65 &&
+                  encryptedMessage[colIndex].codePointAt() <= 90
+               ) {
+                  letter = letter.toUpperCase();
+               }
+
+               result = result + letter;
+               rowIndex++;
+               if (rowIndex >= key.length) rowIndex = 0;
+            }
+         }
+      }
+
+      return result;
+   };
+
    return {
       encrypt,
+      decrypt,
    };
 })();
 

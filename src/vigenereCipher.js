@@ -15,10 +15,15 @@ const vigenereCipher = (function () {
       shift++;
    }
 
-   const encrypt = (message, key) => {
+   const encrypt = (message = "", key = "") => {
       let result = "";
       let rowIndex = 0;
       let colIndex = 0;
+
+      if (typeof message !== "string" || typeof key !== "string") {
+         throw new Error("encrypt method only accepts strings are arguments");
+      }
+      if (key.length === 0) return "";
 
       for (; colIndex < message.length; colIndex++) {
          // if the current message character is not a letter,
@@ -48,10 +53,15 @@ const vigenereCipher = (function () {
       return result;
    };
 
-   const decrypt = function (encryptedMessage, key) {
+   const decrypt = function (encryptedMessage = "", key = "") {
       let result = "";
       let rowIndex = 0;
       let colIndex = 0;
+
+      if (typeof encryptedMessage !== "string" || typeof key !== "string") {
+         throw new Error("decrypt method only accepts strings are arguments");
+      }
+      if (key.length === 0) return "";
 
       key = key.toLowerCase();
 

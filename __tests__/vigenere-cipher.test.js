@@ -44,6 +44,34 @@ describe("ENCRYPT METHOD", () => {
          "Rijvs uyvjn!"
       );
    });
+
+   test("Empty message argument does nothing", () => {
+      expect(vigenereCipher.encrypt("", "key")).toEqual("");
+   });
+
+   test("Empty key argument does nothing", () => {
+      expect(vigenereCipher.encrypt("hello", "")).toEqual("");
+   });
+
+   test("No message and key arguments does nothing", () => {
+      expect(vigenereCipher.encrypt()).toEqual("");
+      expect(vigenereCipher.encrypt("hello")).toEqual("");
+   });
+
+   test("Throw error if message or key are not strings", () => {
+      expect(() => vigenereCipher.encrypt({})).toThrow(
+         "encrypt method only accepts strings are arguments"
+      );
+      expect(() => vigenereCipher.encrypt({}, {})).toThrow(
+         "encrypt method only accepts strings are arguments"
+      );
+      expect(() => vigenereCipher.encrypt("", {})).toThrow(
+         "encrypt method only accepts strings are arguments"
+      );
+      expect(() => vigenereCipher.encrypt({}, "")).toThrow(
+         "encrypt method only accepts strings are arguments"
+      );
+   });
 });
 
 describe("DECRYPT METHOD", () => {
@@ -80,5 +108,33 @@ describe("DECRYPT METHOD", () => {
       expect(
          vigenereCipher.decrypt(".;#&% Rijvs,... Astfov! &%#;.", "key")
       ).toBe(".;#&% Hello,... Cipher! &%#;.");
+   });
+
+   test("Empty message argument does nothing", () => {
+      expect(vigenereCipher.decrypt("", "key")).toEqual("");
+   });
+
+   test("Empty key argument does nothing", () => {
+      expect(vigenereCipher.decrypt("VRPZB", "")).toEqual("");
+   });
+
+   test("No message and key arguments does nothing", () => {
+      expect(vigenereCipher.decrypt()).toEqual("");
+      expect(vigenereCipher.decrypt("VRPZB")).toEqual("");
+   });
+
+   test("Throw error if message or key are not strings", () => {
+      expect(() => vigenereCipher.decrypt({})).toThrow(
+         "decrypt method only accepts strings are arguments"
+      );
+      expect(() => vigenereCipher.decrypt({}, {})).toThrow(
+         "decrypt method only accepts strings are arguments"
+      );
+      expect(() => vigenereCipher.decrypt("", {})).toThrow(
+         "decrypt method only accepts strings are arguments"
+      );
+      expect(() => vigenereCipher.decrypt({}, "")).toThrow(
+         "decrypt method only accepts strings are arguments"
+      );
    });
 });

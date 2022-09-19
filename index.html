@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="author" content="https://github.com/kenua">
+   <title>Vigenere Cipher</title>
+   <!-- GOOGLE FONTS -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+   <!-- CUSTOM CSS -->
+   <link rel="stylesheet" href="./reset.css">
+   <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+   <div class="row">
+      <div class="col vigenere-desc">
+         <img src="./Blaise-de-Vigenère.png" alt="Portrait of Vigenère" class="vigenere-img" width="150">
+         <h1>Vigenère cipher</h1>
+         <blockquote class="quote" cite="https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher">
+            The Vigenère cipher is a method of encrypting alphabetic text by using 
+            a series of interwoven Caesar ciphers, based on the letters of a keyword. 
+         </blockquote>
+         <p class="margin-bottom wikipedia-link">
+            <a href="https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher" class="anchor" target="_blank">
+              - Wikipedia
+            </a>
+         </p>
+         <p class="margin-bottom">
+            This this a webpage where you can encrypt or decrypt a message using the <em>Vigenère cipher</em>.
+            To encrypt your message you need to write a <em>Key</em>.The Key field is used for encrypting 
+            your message, and It  should be a single line of text (like <span class="highlight">dog</span>, 
+            <span class="highlight">Maria</span>, or <span class="highlight">helloWord</span>) 
+            but <strong>it should not have</strong> any whitespace, punctuation mark, or weird character.
+         </p>
+         <p>
+            To decrypt your message you need to write the <em>same Key</em> used for encrypting it. The Key
+            is case-insensitive, meaning the case of your key doesn't change the encryption and decryption result.
+         </p>
+      </div>
+      <div class="col accordion-container">
+         <button type="button" class="button accordion-button">
+            Encrypt 
+            <img src="./circle-chevron-down-solid.svg">
+         </button>
+         <div class="accordion-content">
+            <form action="" id="encrypt-form">
+               <input type="text" name="encrypt-key" placeholder="KEY" class="button accordion__input">
+               <textarea name="encrypt-message" cols="30" rows="10" class="button accordion__input" placeholder="MESSAGE"></textarea>
+               <input type="submit" value="Encrypt Message" class="button button--orange">
+               <p class="margin-top">Result:</p>
+               <output name="output" class="margin-bottom output"></output>
+            </form>
+         </div>
+
+         <button type="button" class="button accordion-button accordion-button--on">
+            Decrypt 
+            <img src="./circle-chevron-down-solid.svg">
+         </button>
+         <div class="accordion-content accordion-content--open">
+            <form action="" id="decrypt-form">
+               <input type="text" name="encrypt-key" placeholder="KEY" class="button accordion__input">
+               <textarea name="encrypt-message" cols="30" rows="10" class="button accordion__input" placeholder="ENCRYPTED MESSAGE"></textarea>
+               <input type="submit" value="Decrypt Message" class="button button--orange">
+               <p class="margin-top">Result:</p>
+               <output name="output" class="output"></output>
+            </form>
+         </div>
+      </div>
+   </div>
+</body>
+</html>

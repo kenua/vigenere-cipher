@@ -1,0 +1,132 @@
+:root {
+   --primary: white;
+   --secondary: #EFEFEF;
+   --thirdly: #FF7C32;
+}
+body {
+   background-color: var(--primary);
+   padding: 4rem;
+}
+p, blockquote {
+   font-family: 'Inter', sans-serif;
+   font-size: 1.6rem;
+   line-height: 1.5;
+}
+h1 {
+   font-size: 3.4rem;
+   font-weight: bold;
+   font-family: 'Poppins', sans-serif;
+   margin-bottom: 2.4rem;
+}
+.quote {
+   font-style: italic;
+}
+.wikipedia-link {
+   text-align: right;
+}
+.highlight {
+   border-bottom: 2px dashed black;
+   display: inline-block;
+}
+.margin-bottom {
+   margin-bottom: 2.4rem;
+}
+.margin-top {
+   margin-top: 2.4rem;
+}
+.anchor {
+   color: var(--thirdly);
+   text-decoration: none;
+   padding-bottom: 1px;
+   border-bottom: 2px dashed var(--thirdly);
+}
+.anchor:hover {
+   border-bottom-style: solid;
+}
+.row {
+   display: flex;
+   row-gap: 3.6rem;
+   flex-direction: column;
+}
+.col {
+   padding: 2rem;
+}
+.vigenere-img {
+   display: block;
+   margin: 0 auto 2.4rem;
+}
+.accordion-container {
+   background-color: var(--secondary);
+}
+.button {
+   background-color: var(--primary);
+   text-transform: capitalize;
+   font-weight: bold;
+   font-family: 'Inter', sans-serif;
+   font-size: 1.6rem;
+   width: 100%;
+   padding: 1rem;
+   margin-bottom: 1rem;
+   border: none;
+   display: block;
+   cursor: pointer;
+}
+.button--orange {
+   background-color: var(--thirdly);
+   color: white;
+}
+.accordion-button {
+   font-size: 1.8rem;
+   display: flex;
+   transition: color 200ms ease;
+}
+.accordion-button img {
+   width: 20px;
+   margin-left: auto;
+   transition: transform 200ms ease;
+}
+.accordion-button--on {
+   color: var(--thirdly);
+}
+.accordion-button--on img {
+   transform: rotate(180deg);
+}
+.accordion-content {
+   max-height: 0;
+   overflow: hidden;
+   margin-bottom: 1rem;
+   transition: max-height 300ms ease;
+}
+.accordion-content--open {
+   padding: 1.5rem;
+   max-height: 100vh;
+}
+.accordion__input {
+   cursor: inherit;
+}
+.output {
+   background-color: var(--primary);
+   font-size: 1.6rem;
+   font-family: monospace;
+   display: block;
+   border-radius: 6px;
+   padding: 6px;
+   min-height: 30px;
+}
+
+@media screen and (min-width: 900px) {
+   .row {
+      max-width: 1200px;
+      margin: auto;
+      flex-direction: row;
+      column-gap: 3.6rem;
+   }
+   .col {
+      width: 50%;
+   }
+   .vigenere-img {
+      float: right;
+      display: inline;
+      margin: 0 0 2.4rem 2.4rem;
+   }
+}

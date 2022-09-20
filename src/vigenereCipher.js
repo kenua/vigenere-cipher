@@ -101,5 +101,3 @@ const vigenereCipher = (function () {
       decrypt,
    };
 })();
-
-module.exports = vigenereCipher;

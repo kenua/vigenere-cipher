@@ -12,6 +12,8 @@
    <!-- CUSTOM CSS -->
    <link rel="stylesheet" href="./reset.css">
    <link rel="stylesheet" href="./styles.css">
+   <script src="./src/vigenereCipher.js" rel="text/javascript" defer></script>
+   <script src="./dom.js" rel="text/javascript" defer></script>
 </head>
 <body>
    <div class="row">
@@ -40,7 +42,7 @@
          </p>
       </div>
       <div class="col accordion-container">
-         <button type="button" class="button accordion-button">
+         <button type="button" id="encrypt-button" class="button accordion-button">
             Encrypt 
             <img src="./circle-chevron-down-solid.svg">
          </button>
@@ -48,20 +50,22 @@
             <form action="" id="encrypt-form">
                <input type="text" name="encrypt-key" placeholder="KEY" class="button accordion__input">
                <textarea name="encrypt-message" cols="30" rows="10" class="button accordion__input" placeholder="MESSAGE"></textarea>
+               <p id="encrypt-error-message" class="margin-bottom"></p>
                <input type="submit" value="Encrypt Message" class="button button--orange">
                <p class="margin-top">Result:</p>
                <output name="output" class="margin-bottom output"></output>
             </form>
          </div>
 
-         <button type="button" class="button accordion-button accordion-button--on">
+         <button type="button" id="decrypt-button" class="button accordion-button">
             Decrypt 
             <img src="./circle-chevron-down-solid.svg">
          </button>
-         <div class="accordion-content accordion-content--open">
+         <div class="accordion-content">
             <form action="" id="decrypt-form">
-               <input type="text" name="encrypt-key" placeholder="KEY" class="button accordion__input">
-               <textarea name="encrypt-message" cols="30" rows="10" class="button accordion__input" placeholder="ENCRYPTED MESSAGE"></textarea>
+               <input type="text" name="decrypt-key" placeholder="KEY" class="button accordion__input">
+               <textarea name="decrypt-message" cols="30" rows="10" class="button accordion__input" placeholder="ENCRYPTED MESSAGE"></textarea>
+               <p id="decrypt-error-message" class="margin-bottom"></p>
                <input type="submit" value="Decrypt Message" class="button button--orange">
                <p class="margin-top">Result:</p>
                <output name="output" class="output"></output>

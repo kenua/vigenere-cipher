@@ -14,6 +14,14 @@ window.addEventListener('DOMContentLoaded', () => {
    const decryptFormOutput = decryptForm.elements.output;
    const decryptErrorMsg = document.getElementById('decrypt-error-message');
 
+   encryptFormKey.value = 'cookie';
+   encryptFormMessage.value = 'Hello world!';
+   encryptFormOutput.value = 'Jszvw aqfzn!';
+
+   decryptFormKey.value = 'cookie';
+   decryptFormMessage.value = 'Jszvw aqfzn!';
+   decryptFormOutput.value = 'Hello world!';
+
    encryptBtn.addEventListener('click', toggleAccordion);
    decryptBtn.addEventListener('click', toggleAccordion);
    encryptForm.addEventListener('submit', encryptUserInput);

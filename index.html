@@ -34,7 +34,7 @@
             To encrypt your message you need to write a <em>Key</em>.The Key field is used for encrypting 
             your message, and It  should be a single line of text (like <span class="highlight">dog</span>, 
             <span class="highlight">Maria</span>, or <span class="highlight">helloWord</span>) 
-            but <strong>it should not have</strong> any whitespace, punctuation mark, or weird character.
+            but <strong>it should not have</strong> any whitespace, punctuation mark, or digit.
          </p>
          <p>
             To decrypt your message you need to write the <em>same Key</em> used for encrypting it. The Key
@@ -50,7 +50,7 @@
             <form action="" id="encrypt-form">
                <input type="text" name="encrypt-key" placeholder="KEY" class="button accordion__input">
                <textarea name="encrypt-message" cols="30" rows="10" class="button accordion__input" placeholder="MESSAGE"></textarea>
-               <p id="encrypt-error-message" class="margin-bottom"></p>
+               <p id="encrypt-error-message" class="margin-bottom error-message"></p>
                <input type="submit" value="Encrypt Message" class="button button--orange">
                <p class="margin-top">Result:</p>
                <output name="output" class="margin-bottom output"></output>
@@ -65,7 +65,7 @@
             <form action="" id="decrypt-form">
                <input type="text" name="decrypt-key" placeholder="KEY" class="button accordion__input">
                <textarea name="decrypt-message" cols="30" rows="10" class="button accordion__input" placeholder="ENCRYPTED MESSAGE"></textarea>
-               <p id="decrypt-error-message" class="margin-bottom"></p>
+               <p id="decrypt-error-message" class="margin-bottom error-message"></p>
                <input type="submit" value="Decrypt Message" class="button button--orange">
                <p class="margin-top">Result:</p>
                <output name="output" class="output"></output>
